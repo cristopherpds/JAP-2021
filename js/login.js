@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (userName.value !== '' && password.value !== '') {
-      window.location.href = 'index.html';
+      window.location.href = 'home.html';
     } else /*if (userName.value === '' && password.value === '')*/ {
       console.log('Porfavor rellene los campos');
     }
