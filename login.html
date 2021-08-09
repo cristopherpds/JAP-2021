@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,41 +13,59 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/signin.css" rel="stylesheet">
   <style>
-    html, body{
-      height: 100%;
+    /*.bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
-    body {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #f5f5f5;
-    }
-
-    .signin {
-      width: 100%;
-      max-width: 330px;
-      padding: 15px;
-      margin: auto;
-    }
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }*/
   </style>
 </head>
 
 <body class="text-center">
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+    <div class="px-lg-5 py-lg-4 p-4">
+      <form class="form-signin mb-5" id="form-signin">
+        <!--<img class="mb-4" src="./img/cover_back.png" alt="" width="72" height="72">-->
+        <h1 class="h3 mb-4 font-weight-normal">Bienvenido de vuelta</h1>
+        <div class="mb-4">
+          <label for="inputUserName" class="sr-only">Usuario</label>
+          <input type="text" id="inputUserName" class="form-control" placeholder="Ingresa tu nombre de usuario" required autofocus>
+        </div>
+        <div class="mb-4">
+          <label for="inputPassword" class="sr-only">Contraseña</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Ingresa tu contraseña" required>
+        </div>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="Condiciones"> Aceptar condiciones
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="saveUser(userName.value)">Iniciar sesión</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+
+      </form>
+    </div>
+    <!--<div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
       <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 08/08/2021).</p>
       <hr>
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+    </div>-->
   </div>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
+
 </html>
