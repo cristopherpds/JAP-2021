@@ -44,9 +44,9 @@ var getJSONData = function (url) {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-  if (document.referrrer !== 'login.html') {
+  /*if (document.referrrer !== 'login.html') {
     location.href == 'login.html';
-  }
+  }*/
   const getUserName = localStorage.getItem('user');
   document.getElementById("welcome").innerHTML += `
   <h1 class="text-uppercase text-muted  font-weight-bold">Bienvenido ${getUserName}!!! 😄</h1>`

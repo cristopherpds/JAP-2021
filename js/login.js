@@ -2,18 +2,18 @@ const userName = document.getElementById('inputUserName');
 const password = document.getElementById('inputPassword');
 const form = document.getElementById('form-signin');
 
+//guarda nombre de usuario en localStorage
 const saveUser = (userName) =>{
   localStorage.setItem('user', userName);
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function (e) {
-  
+document.addEventListener("DOMContentLoaded", function (e) { 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (userName.value !== '' && password.value !== '') {
-      window.location.href = 'index.html';
+      window.location.href = 'home.html';
     } else /*if (userName.value === '' && password.value === '')*/ {
       console.log('Porfavor rellene los campos');
     }
