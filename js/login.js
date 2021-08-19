@@ -61,11 +61,11 @@ const checkUser = () => {
       console.log('Porfavor rellene los campos');
     }
     userName.addEventListener('focus', (e) => {
-      userName.style.border = 'none'
+      userName.style.border = '1px solid #ced4da'
       errorUser.style.display = 'none';
     });
     password.addEventListener('focus', (e) => {
-      password.style.border = 'none'
+      password.style.border = '1px solid #ced4da'
       errorPassword.style.display = 'none';
     });
   });
