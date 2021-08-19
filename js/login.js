@@ -31,16 +31,6 @@ function signOut() {
     console.log('User signed out.');
   });
 }
-const errorHandler = () => {
-  let errorUser = document.getElementById('errorUser');
-  let errorPassword = document.getElementById('errorPassword');
-  if (userInput.value !== '' && inputPassword.value !== '') {
-    console.log('error');
-    errorUser.style.display = "block";
-    errorUser.innerHTML = `Ingresa un usuario valido`
-    errorUser.style.color = "red"
-  }
-}
 
 const checkUser = () => {
   let errorUser = document.getElementById('errorUser');
@@ -70,6 +60,7 @@ const checkUser = () => {
     });
   });
 }
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
