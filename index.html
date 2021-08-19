@@ -8,6 +8,10 @@
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
 
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id"
+    content="197604950024-fugd34tfhhbi665fkvq0h4hjahjubf6j.apps.googleusercontent.com">
+
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <!-- Bootstrap core CSS -->
@@ -23,7 +27,6 @@
       -ms-user-select: none;
       user-select: none;
     }
-
     @media (min-width: 768px) {
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
@@ -37,35 +40,32 @@
     <div class="px-lg-5 py-lg-4 p-4">
       <form class="form-signin mb-5" id="form-signin">
         <!--<img class="mb-4" src="./img/cover_back.png" alt="" width="72" height="72">-->
-        <h1 class="h3 mb-4 font-weight-normal">Bienvenido de vuelta</h1>
+        <h1 class="h3 mb-4 font-weight-bold">Bienvenido!!! 😄</h1>
         <div class="mb-4">
           <label for="inputUserName" class="sr-only">Usuario</label>
-          <input type="text" id="inputUserName" class="form-control" placeholder="Ingresa tu nombre de usuario" required autofocus>
+          <input type="text" id="inputUserName" class="form-control" placeholder="Ingresa tu nombre de usuario"
+            autofocus>
+            <small class="mt-2"id="errorUser"></small>
         </div>
         <div class="mb-4">
           <label for="inputPassword" class="sr-only">Contraseña</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Ingresa tu contraseña" required>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Ingresa tu contraseña">
+          <small class="mt-2"id="errorPassword"></small>
+          <a href="#" id="passwordHelp" class="form-text ">¿Has olvidado tu
+            contraseña?</a>
         </div>
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="Condiciones"> Aceptar condiciones
-          </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onsubmit="saveUser(userName.value)">Iniciar
+          sesión</button>
+        <div class="mt-5">
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="saveUser(userName.value)">Iniciar sesión</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+        <p class="fixed-bottom font-weight-bold text-muted">&copy; 2021</p>
 
       </form>
     </div>
-    <!--<div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 08/08/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>-->
   </div>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
-
 </html>
