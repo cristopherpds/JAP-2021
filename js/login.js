@@ -53,34 +53,19 @@ const checkUser = () => {
       errorUser.style.display = 'block';
       errorUser.innerHTML = `Ingresa un usuario valido`;
       errorUser.style.color = 'red';
-<<<<<<< HEAD
       userName.style.border = '2px solid red'
       errorPassword.style.display = 'block';
       errorPassword.innerHTML = `Ingresa una contraseña valida`;
       password.style.border = '2px solid red'
-=======
-      userName.style.border= '2px solid red'
-      errorPassword.style.display = 'block';
-      errorPassword.innerHTML = `Ingresa una contraseña valida`;
-      password.style.border= '2px solid red'
->>>>>>> b22473dfa2e8796ea8055305d8bbcfbb583198fa
       errorPassword.style.color = 'red';
       console.log('Porfavor rellene los campos');
     }
     userName.addEventListener('focus', (e) => {
-<<<<<<< HEAD
       userName.style.border = 'none'
       errorUser.style.display = 'none';
     });
     password.addEventListener('focus', (e) => {
       password.style.border = 'none'
-=======
-      userName.style.border= 'none'
-      errorUser.style.display = 'none';
-    });
-    password.addEventListener('focus', (e) => {
-      password.style.border= 'none'
->>>>>>> b22473dfa2e8796ea8055305d8bbcfbb583198fa
       errorPassword.style.display = 'none';
     });
   });
