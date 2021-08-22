@@ -32,6 +32,12 @@ function signOut() {
   });
 }
 
+function onLoad() {
+      gapi.load('auth2', function () {
+        gapi.auth2.init();
+      });
+    }
+
 const checkUser = () => {
   let errorUser = document.getElementById('errorUser');
   let errorPassword = document.getElementById('errorPassword');
