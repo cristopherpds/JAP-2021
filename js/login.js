@@ -2,9 +2,10 @@ const userName = document.getElementById('inputUserName');
 const password = document.getElementById('inputPassword');
 const form = document.getElementById('form-signin');
 
+
 //guarda nombre de usuario en localStorage
 const saveUser = (userName) => {
-  localStorage.setItem('user', userName);
+  sessionStorage.setItem('user', userName);
 }
 
 //Google SignIn
@@ -18,6 +19,7 @@ function onSignIn(googleUser) {
   var id_token = googleUser.getAuthResponse().id_token;
   console.log("ID Token: " + id_token);*/
   if (profile.getName() !== '' && profile.getImageUrl() !== '' && profile.getEmail() !== '') {
+    //sessionStorage.setItem('googleUser', profile.getName());
     window.location.href = 'home.html';
   } else {
     console.log('No fue posible iniciar sesion con Google');
@@ -44,6 +46,7 @@ const checkUser = () => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (userName.value !== '' && password.value !== '') {
+      saveUser(userName.value)
       window.location.href = 'home.html';
     } else {
       errorUser.style.display = 'block';
@@ -72,9 +75,8 @@ const checkUser = () => {
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
   checkUser();
+  saveUser(userName.value)
 });
-
-
 
 /* esto puede ayudar a que no se pueda acceder via url sin pasar por el login
 if (document.referrer !== '') {

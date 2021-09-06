@@ -44,10 +44,13 @@ var getJSONData = function (url) {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-  /*if (document.referrrer !== 'login.html') {
-    location.href == 'login.html';
-  }*/
-  const getUserName = localStorage.getItem('user') || undefined;
+  const getUserName = sessionStorage.getItem('user') || undefined;
+  console.log(getUserName);
+  if(getUserName !== undefined){
+    document.getElementById("name").innerHTML += getUserName;
+  }
+
+  /*const getUserName = localStorage.getItem('user') || undefined;
   const getUserGoogleName = localStorage.getItem('userGoogle');
   if(getUserName!== undefined){
     document.getElementById("welcome").innerHTML += 
@@ -56,5 +59,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
     `<h1 class="text-uppercase text-muted  font-weight-bold">Bienvenido!!! 😄</h1>`
   }
   
-  console.log(getUserGoogleName);
+  console.log(getUserGoogleName);*/
 });
