@@ -13,6 +13,11 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <style>
+    textarea:max-length{
+      border-color: #ff0000;
+    }
+  </style>
 </head>
 
 <body>
@@ -79,19 +84,26 @@
       <div class="container border">
         <h2 class="mx-4">Comentarios</h2>
       </div>
+
       <div class="container border" id="reviewContainer">
       </div>
       <hr class="my-3">
-
-      <!--<div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega:
-        03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>-->
-      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
-  </div>
+      <div class="container border">
+        <label for="txtAreaComments" class="text-muted">Agregar comentario</label>
+        <textarea class="form-control" name="comments mr-2" minlength="25" maxlength="255" id="txtAreaComments" rows="5"
+          placeholder="Agrega un comentario"></textarea>
+        <div class="container mt-3" id="selectRating">
+          <span class="comments" id="comments">Calificar: </span>
+          <span class="fa fa-star" id="star1" onclick="addStars(this,1)"></span>
+          <span class="fa fa-star" id="star2" onclick="addStars(this,2)"></span>
+          <span class="fa fa-star" id="star3" onclick="addStars(this,3)"></span>
+          <span class="fa fa-star" id="star4" onclick="addStars(this,4)"></span>
+          <span class="fa fa-star" id="star5" onclick="addStars(this,5)"></span>
+        </div>
+        <button class="btn btn-primary btn-lg my-3" type="submit" id="submitComment">Enviar comentario</button>
+      </div>
+    </dl>
+    <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
   </div>
   <footer class="text-muted">
     <div class="container">
