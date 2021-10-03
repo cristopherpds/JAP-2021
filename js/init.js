@@ -46,8 +46,35 @@ var getJSONData = function (url) {
 document.addEventListener("DOMContentLoaded", function (e) {
   const getUserName = sessionStorage.getItem('user') || undefined;
   console.log(getUserName);
-  if(getUserName !== undefined){
-    document.getElementById("name").innerHTML += getUserName;
+  if (getUserName != undefined) {
+    document.getElementById('navBar').innerHTML += `
+    <div class="btn-group">
+        <button type="button" class="btn btn-secondary">${getUserName}</button>
+        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only"></span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" id="userLogout" href="index.html">Cerrar sesión</a>
+        </div>
+      </div>
+    `
+    let close = document.getElementById('userLogout');
+    close.addEventListener('click', (e) => {
+      sessionStorage.removeItem('user');
+      signOut()
+    })
+  } else {
+    document.getElementById("navBar").innerHTML +=
+      `
+    <div class="btn-group">
+        <a class="py-2 d-none d-md-inline-block" href="index.html">
+        <button type="button" class="btn btn-secondary">Iniciar Sesión</button>
+        </a>
+    </div>
+    `
   }
 
   /*const getUserName = localStorage.getItem('user') || undefined;

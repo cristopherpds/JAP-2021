@@ -50,7 +50,7 @@ const showRating = (rating) => {
   return htmlScore
 }
 
-
+// funcion para mostrar estrellas precargadas des del json
 const showStars = (productInfo) => {
   for (let i = 0; i < productInfo.length; i++) {
     const product = productInfo[i];
@@ -119,9 +119,11 @@ const showRelatedProducts = (relatedProductsArray) => {
       let relatedProductsHtmlToAppend = '';
       if (resObj.status === 'ok') {
         let allProducts = resObj.data;
+        console.log(allProducts)
         for (let i = 0; i < relatedProductsArray.length; i++) {
           let relatedProductPosition = relatedProductsArray[i];
           let related = allProducts[relatedProductPosition];
+          console.log(related);
 
           relatedProductsHtmlToAppend += `
           <div class= "col-lg-3 col-md-4 col-6 border m-3">
@@ -173,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   });
   getJSONData(PRODUCT_INFO_COMMENTS_URL).then(resultObj => {
     let productComments = resultObj.data;
-    console.log(productComments);
+    //console.log(productComments);
     showReviews(productComments);
   });
 
