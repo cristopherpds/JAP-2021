@@ -11,6 +11,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href='https://css.gg/trash.css' rel='stylesheet'>
 
   <style>
     .bd-placeholder-img {
@@ -20,6 +21,14 @@
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+    }
+
+    .bg-dark-ligth {
+      background-color: #999999 !important;
+    }
+
+    .remove {
+      color: red
     }
 
     @media (min-width: 768px) {
@@ -130,15 +139,24 @@
     <div class="row">
       <div class="col">
         <h4 class="mb-3">Costos</h4>
-        <ul class="list-group mb-3">
-          <li class="list-group-item justify-content-between d-flex">
+        <ul class="list-group mb-3 ">
+          <li class="list-group-item justify-content-between d-flex bg-dark-ligth">
             <h5>SubTotal </h5><span id="subtotal"></span>
           </li>
-          <li class="list-group-item justify-content-between d-flex">
+          <li class="list-group-item justify-content-between d-flex bg-dark-ligth">
+            <h5>Envío </h5><span id="envio"></span>
+          </li>
+          <li class="list-group-item justify-content-between d-flex bg-dark-ligth">
             <h5>Total </h5><span id="total"></span>
           </li>
         </ul>
       </div>
+    </div>
+
+    <div class="mt-5">
+      <button id="btnWayToPay" class="btn btn-primary btn-md">Forma de Pago</button>
+      <button type="button" id="btnBuy" class="btn btn-primary btn-md">Comprar</button>
+      <span id="validations"></span>
     </div>
   </div>
   <div id="spinner-wrapper">
