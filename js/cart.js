@@ -1,4 +1,4 @@
-let articles = {};
+//let articles = {};
 let cost = 0;
 let quantity = 0;
 let quote = 40;
@@ -92,6 +92,7 @@ const cartTotalCost = () => {
     let subIndividual = arraySubtotales[i];
     totalCost += parseFloat(subIndividual.innerText);
   }
+  
   let shippingAmount = shippingCost * totalCost;
   let withShipping = totalCost * (1 + shippingCost);
   let htmlSub = `<strong class="text-muted">UYU` + " " + Math.round(totalCost) + `</strong>`
